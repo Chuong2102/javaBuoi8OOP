@@ -50,7 +50,7 @@ public class Car implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "name=" + name + ", engine=" + engine + ", seats=" + seats + ", productionDate=" + productionDate
+		return "name: " + name + ", engine: " + engine + ", seats: " + seats + ", productionDate: " + productionDate
 				;
 	}
 	

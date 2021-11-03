@@ -12,7 +12,8 @@ public class qlsvKTPM {
 		//Clone
 		Student s2 = (Student) s.clone();
 		System.out.println("Clone:");
-		System.out.println(s2.toString());
+		
+		System.out.println("s2: " + s2.toString());
 		
 		//Seriable
 		//
@@ -23,9 +24,10 @@ public class qlsvKTPM {
 	    // De-serializing 'a'
 	    FileInputStream fis = new FileInputStream("D:\\Student.txt");
 	    ObjectInputStream ois = new ObjectInputStream(fis);
-	    Student b = (Student)ois.readObject(); 
-	    // down-casting object
+	    Student b = (Student)ois.readObject(); // down-casting object
 	    
+	    System.out.print("Sau khi down-cast: ");
+	    System.out.println(b.toString());
 	
 	    // closing streams
 	    oos.close();
@@ -34,8 +36,18 @@ public class qlsvKTPM {
 	    //Compare
 	    System.out.println("Compare");
 	    Student c = new Student("Le Thi B", "10-02-2002", '1', 5, 4);
-	    System.out.println(s.toString() +" va "+ c.toString());
-	    System.out.println(s.compareTo(c));	
+	    
+	    System.out.print("So sanh " + s.getFullName() + " co gpa " + s.getGpa() + " va Social Activities " + s.getSocialActivities() + " voi ");
+	    System.out.println(c.getFullName() + " voi gpa: " + c.getGpa() + " va Social Acts " + c.getSocialActivities());
+
+
+	    int result = s.compareTo(c);
+	    if(result == 1)
+	    	System.out.println(s.getFullName() + " gioi hon " + c.getFullName());
+	    else if(result == 0)
+	    	System.out.println(s.getFullName() + " gioi bang " + c.getFullName());
+	    else if(result == -1)
+	    	System.out.println(s.getFullName() + " kem hon " + c.getFullName());
 	}
 
 }

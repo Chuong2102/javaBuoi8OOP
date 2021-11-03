@@ -19,7 +19,8 @@ public class CarMain {
 	    ObjectInputStream ois = new ObjectInputStream(fis);
 	    Car b = (Car)ois.readObject(); 
 	    // down-casting object
-	    System.out.print(b.toString());
+	    
+	    System.out.print("Doc tu file Car.txt: " + b.toString());
 	
 	    // closing streams
 	    oos.close();
